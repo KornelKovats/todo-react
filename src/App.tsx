@@ -1,11 +1,11 @@
 import React, { ReactElement, useState } from 'react';
-import './App.css';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
-import TodoComponent from './components/Todo';
+import TodoComponent from './components/TodoComponent';
+import './App.css';
 
-interface Todo {
+export interface Todo {
   id: string;
   text: string;
 }
@@ -30,7 +30,7 @@ function App(): ReactElement {
 
   return (
     <div className="App">
-      <CardActions sx={{ justifyContent: 'center', margin: '30px' }}>
+      <CardActions sx={{ justifyContent: '', margin: '30px' }}>
         <TextField id="outlined-basic"
           label="Your todo"
           variant="outlined"
@@ -62,7 +62,11 @@ function App(): ReactElement {
         </Button>
       </CardActions>
       <CardActions sx={{ display: 'flex', flexDirection: 'column', margin: '30px' }}>
-        {todos.map((todoElement: { text: string }) => <TodoComponent text={todoElement.text}/>)}
+        {todos.map((todoElement: Todo) => <TodoComponent
+          text={todoElement.text}
+          key={todoElement.id}
+          id={todoElement.id}
+          setTodos={setTodos}/>)}
       </CardActions>
     </div>
   );
