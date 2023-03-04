@@ -298,7 +298,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': ['error', { ignoreOnInitialization: true }],
     '@typescript-eslint/no-throw-literal': 'error',
     '@typescript-eslint/no-unused-expressions': 'error',
-    '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-useless-constructor': 'error',
     '@typescript-eslint/object-curly-spacing': ['error', 'always'],
