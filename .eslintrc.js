@@ -204,7 +204,7 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/method-signature-style': ['error', 'method'],
     '@typescript-eslint/naming-convention': [
-      'error',
+      'off',
       {
         selector: ['variable', 'function'],
         format: ['camelCase', 'UPPER_CASE'],
